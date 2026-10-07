@@ -1,0 +1,252 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.25.0",
+    "script_metadata_hash": "cdac4f193ea60f385129ed849f93ec6c"
+  },
+  "cells": [
+    {
+      "id": "setup",
+      "code_hash": "03a543b027651fd6e493b3783be187a9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "YovB",
+      "code_hash": "cdf2d09c72f5d4bc0486b90360a959a7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"trabalho-pratico-horario-escolar\">Trabalho Pr\u00e1tico: Hor\u00e1rio Escolar</h1>\n<hr />\n<span class=\"paragraph\">A Biblioteca de modela\u00e7\u00e3o escolhida foi OR-Tools, uma vez que foi usada para resolver um problema do mesmo tipo numa aula pr\u00e1tica.</span>\n<span class=\"paragraph\">Utilizei a biblioteca \"pandas\" para ler os dados em formato csv uma vez que tem algumas funcionalidades \u00fateis, como por exemplo, o <code>fillna()</code> para substituir os valores <code>NaN</code> por outro.</span>\n<span class=\"paragraph\">Reutilizei c\u00f3digo que foi feito numa das aulas pr\u00e1ticas para representar informa\u00e7\u00e3o de um problema parecido. Foram feitas umas pequenas altera\u00e7\u00f5es para mostrarmos os hor\u00e1rios.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "sIwQ",
+      "code_hash": "52db5d3af88fe0e0d86cac9946bd6e45",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"leitura-de-dados-r8\">Leitura de dados (R8)</h3>\n<hr />\n<span class=\"paragraph\">Os dados s\u00e3o lidos com <code>pandas</code>, como foi referido anteriormente, a partir dos ficheiros <code>csv</code> da pasta indicada. As \u00fanicas constantes s\u00e3o <code>dias</code> e <code>periodos</code> e todos os outros dados s\u00e3o lidos dos ficheiros.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "GBlm",
+      "code_hash": "502e60ecaa9f87bf347434668eecd656",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "FGKc",
+      "code_hash": "c6bfc61370a14a700340d8b403459b78",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "hnRh",
+      "code_hash": "6339c8acbd937b6156fd3c4b5fd181e4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"uma-turma-nao-pode-ter-duas-aulas-em-simultaneo-r1\">Uma turma n\u00e3o pode ter duas aulas em simult\u00e2neo. (R1)</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bksA",
+      "code_hash": "11715621050d96611bd5a1744608db8e",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "syntax",
+          "evalue": "line 5\n    return horario.Add(sum(get_Value(t,d,p, dis) for dis in disciplinas) <= 1)\nIndentationError: expected an indented block after 'for' statement on line 4\n",
+          "traceback": []
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Nysc",
+      "code_hash": "2fe6123e3d88695ab06517229349b3e3",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"cada-disciplina-cumpre-exatamente-a-carga-semanal-para-cada-turma-r2\">Cada disciplina cumpre exatamente a carga semanal, para cada turma. (R2)</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "RcxC",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "qMan",
+      "code_hash": "6d1bec09a14bc9d2b8dbc79d607f86a8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"para-as-disciplinas-sem-duplo-periodo-no-maximo-um-tempo-por-dia-em-cada-turma-r3\">Para as disciplinas sem duplo per\u00edodo, no m\u00e1ximo um tempo por dia em cada turma. (R3)</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "mygd",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "LBCl",
+      "code_hash": "37bf0ade6b5221b5dfa46e6d3fd8f2e3",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"disciplinas-marcadas-duplo_periodosim-so-podem-ser-dadas-em-blocos-de-2-tempos-consecutivos-no-mesmo-dia-r4\">Disciplinas marcadas <code>duplo_periodo=sim</code> s\u00f3 podem ser dadas em blocos de 2 tempos consecutivos, no mesmo dia. (R4)</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "whdQ",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "hnLx",
+      "code_hash": "49fc8f24e299ab34b6aa0c4888e4df34",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"um-professor-nao-pode-dar-duas-aulas-em-simultaneo-mesmo-que-sejam-a-turmas-ou-disciplinas-diferentes-r5\">Um professor n\u00e3o pode dar duas aulas em simult\u00e2neo, mesmo que sejam a turmas ou disciplinas diferentes. (R5)</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ChVS",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "SmVE",
+      "code_hash": "c1c32ad9d02e863655934adc4a48813e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"um-professor-so-pode-dar-aulas-nos-tempos-em-que-esta-disponivel-r6\">Um professor s\u00f3 pode dar aulas nos tempos em que est\u00e1 dispon\u00edvel. (R6)</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lKvP",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "CQxH",
+      "code_hash": "f9564f5b9d94821d344d9a6f61d4af9b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"cada-aula-ocupa-uma-sala-disciplinas-com-sala_especial-so-podem-usar-salas-desse-tipo-as-restantes-usam-salas-normal-em-nenhum-tempo-o-numero-de-aulas-a-decorrer-num-tipo-de-sala-pode-exceder-a-quantidade-desse-tipo-definida-em-salascsv-r7\">Cada aula ocupa uma sala. Disciplinas com <code>sala_especial</code> s\u00f3 podem usar salas desse tipo; as restantes usam salas <code>normal</code>. Em nenhum tempo o n\u00famero de aulas a decorrer num tipo de sala pode exceder a <code>quantidade</code> desse tipo definida em <code>salas.csv</code>. (R7)</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bxsA",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "ICFN",
+      "code_hash": "8789b60ffee84904883350e241160092",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "LuQo",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "XsPE",
+      "code_hash": "8eb0f2a869f99201535a7428d22b50b4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"representar-o-horario-gerado-de-acordo-com-as-restricoes\">Representar o hor\u00e1rio gerado de acordo com as restri\u00e7\u00f5es</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "EJYq",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    }
+  ]
+}
