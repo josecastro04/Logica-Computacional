@@ -612,5 +612,13 @@ def _(
     return
 
 
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    ###Link para a conversa do [Claude](https://claude.ai/share/4602df29-b56a-40ff-b389-e024458a17ef)
+    """)
+    return
+
+
 if __name__ == "__main__":
     app.run()
